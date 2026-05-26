@@ -137,24 +137,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Creative Partner Column */}
-          <div className="flex flex-col">
-            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-stone-400 mb-6 font-sans">
-              Creative Partner
-            </h4>
-            <div className="flex flex-col gap-2">
-              <span className="text-sm font-light text-stone-500">Made by</span>
-              <a
-                href="https://codeclover.studio"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-stone-900 font-sans font-semibold tracking-wider hover:opacity-80 transition-opacity text-base"
-              >
-                code<span className="text-festival-orange font-bold">clover</span>studio
-              </a>
-              <span className="text-[10px] text-stone-400 italic mt-1 font-light">Crafting Premium Digital Art</span>
-            </div>
-          </div>
 
         </div>
 
