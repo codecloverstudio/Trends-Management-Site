@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/Event-Management_template2/',
+  base: '/Trends-Management-Site/',
   plugins: [
     react(),
     tailwindcss(),

@@ -81,8 +81,8 @@ const Contact = () => {
     const submissionData = {
       ...formData,
       eventDate: formData.eventDate ? formData.eventDate.toLocaleDateString() : 'Not Specified',
-      // IMPORTANT: Get your access key from https://web3forms.com/ using shashankgupta4068@gmail.com
-      access_key: "faf3502b-e8c4-42b8-9a63-15e8531aa738",
+      // IMPORTANT: Get your access key from https://web3forms.com/ using trendsmanagement11@gmail.com
+      access_key: "bce8c0e6-dfcb-444f-ae35-89f167882331",
       subject: `New Event Inquiry from ${formData.fullName}`
     };
 
