@@ -1,0 +1,1 @@
+var e=`/Trends-Management-Site/assets/owner-BWaqwDkj.jpeg`;export{e as t};
