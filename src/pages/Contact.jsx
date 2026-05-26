@@ -406,7 +406,7 @@ const Contact = () => {
                     Open in Maps ↗
                   </a>
                 </div>
-                <div className="relative w-full h-[220px] rounded-2xl overflow-hidden border border-stone-100 shadow-inner">
+                <div className="relative w-full h-55 rounded-2xl overflow-hidden border border-stone-100 shadow-inner">
                   <iframe 
                     src={`https://maps.google.com/maps?q=${encodeURIComponent(companyInfo.address)}&t=&z=16&ie=UTF8&iwloc=&output=embed`} 
                     width="100%" 
