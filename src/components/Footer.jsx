@@ -44,7 +44,7 @@ const Footer = () => {
         </div>
 
         {/* Middle Section: Links Columns */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12 mb-16 border-t border-stone-200 pt-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 border-t border-stone-200 pt-16">
           
           {/* Segments Column */}
           <div className="flex flex-col">
@@ -53,16 +53,16 @@ const Footer = () => {
             </h4>
             <ul className="flex flex-col gap-4 text-sm font-light text-stone-600">
               <li>
-                <Link to="/Segments" className="hover:text-stone-900 hover:underline transition-all">Destination Weddings</Link>
+                <Link to="/Segments" className="hover:text-mustard-gold hover:translate-x-1 transition-all duration-300 inline-block">Destination Weddings</Link>
               </li>
               <li>
-                <Link to="/Segments" className="hover:text-stone-900 hover:underline transition-all">Heritage & Royal Weddings</Link>
+                <Link to="/Segments" className="hover:text-mustard-gold hover:translate-x-1 transition-all duration-300 inline-block">Heritage & Royal Weddings</Link>
               </li>
               <li>
-                <Link to="/Segments" className="hover:text-stone-900 hover:underline transition-all">Corporate Galas & Summits</Link>
+                <Link to="/Segments" className="hover:text-mustard-gold hover:translate-x-1 transition-all duration-300 inline-block">Corporate Galas & Summits</Link>
               </li>
               <li>
-                <Link to="/Segments" className="hover:text-stone-900 hover:underline transition-all">Private Luxury Celebrations</Link>
+                <Link to="/Segments" className="hover:text-mustard-gold hover:translate-x-1 transition-all duration-300 inline-block">Private Luxury Celebrations</Link>
               </li>
             </ul>
           </div>
@@ -74,16 +74,16 @@ const Footer = () => {
             </h4>
             <ul className="flex flex-col gap-4 text-sm font-light text-stone-600">
               <li>
-                <Link to="/projects" className="hover:text-stone-900 hover:underline transition-all">Our Projects</Link>
+                <Link to="/projects" className="hover:text-mustard-gold hover:translate-x-1 transition-all duration-300 inline-block">Our Projects</Link>
               </li>
               <li>
-                <Link to="/about" className="hover:text-stone-900 hover:underline transition-all">About Our Legacy</Link>
+                <Link to="/about" className="hover:text-mustard-gold hover:translate-x-1 transition-all duration-300 inline-block">About Our Legacy</Link>
               </li>
               <li>
-                <Link to="/feedback" className="hover:text-stone-900 hover:underline transition-all">Client Reviews</Link>
+                <Link to="/feedback" className="hover:text-mustard-gold hover:translate-x-1 transition-all duration-300 inline-block">Client Reviews</Link>
               </li>
               <li>
-                <Link to="/contact" className="hover:text-stone-900 hover:underline transition-all">Contact Desk</Link>
+                <Link to="/contact" className="hover:text-mustard-gold hover:translate-x-1 transition-all duration-300 inline-block">Contact Desk</Link>
               </li>
             </ul>
           </div>
@@ -98,7 +98,7 @@ const Footer = () => {
                 href={companyInfo.socials.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-stone-200/80 shadow-xs text-xs text-stone-700 hover:text-stone-950 hover:border-stone-400 transition-all hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-stone-200/80 shadow-xs text-xs text-stone-700 hover:text-stone-950 hover:border-stone-400 transition-all hover:-translate-y-0.5 duration-300"
               >
                 <Instagram size={14} className="text-pink-600" />
                 <span>@trendsmanagement</span>
@@ -107,7 +107,7 @@ const Footer = () => {
                 href={companyInfo.socials.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-stone-200/80 shadow-xs text-xs text-stone-700 hover:text-stone-950 hover:border-stone-400 transition-all hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-stone-200/80 shadow-xs text-xs text-stone-700 hover:text-stone-950 hover:border-stone-400 transition-all hover:-translate-y-0.5 duration-300"
               >
                 <Facebook size={14} className="text-blue-600 fill-blue-600 stroke-none" />
                 <span>@trendsmanagement</span>
@@ -116,7 +116,7 @@ const Footer = () => {
                 href={companyInfo.socials.ownerInstagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-stone-200/80 shadow-xs text-xs text-stone-700 hover:text-stone-950 hover:border-stone-400 transition-all hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-stone-200/80 shadow-xs text-xs text-stone-700 hover:text-stone-950 hover:border-stone-400 transition-all hover:-translate-y-0.5 duration-300"
               >
                 <Instagram size={14} className="text-pink-600" />
                 <span>Nikhil Karadbhajne</span>
@@ -125,19 +125,25 @@ const Footer = () => {
                 href={`https://wa.me/${companyInfo.phone}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-stone-200/80 shadow-xs text-xs text-stone-700 hover:text-stone-950 hover:border-stone-400 transition-all hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-stone-200/80 shadow-xs text-xs text-stone-700 hover:text-stone-950 hover:border-stone-400 transition-all hover:-translate-y-0.5 duration-300"
               >
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                 <span>{companyInfo.phoneDisplay}</span>
               </a>
             </div>
-            <div className="text-xs text-stone-500 font-light font-sans max-w-xs">
+            
+            <div className="text-xs text-stone-500 font-light font-sans max-w-xs mt-4">
               <span className="block font-bold uppercase tracking-[0.15em] text-[9px] mb-1.5 text-stone-400">Nagpur Office</span>
-              <span className="text-stone-700 leading-relaxed font-normal">{companyInfo.address}</span>
+              <a 
+                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(companyInfo.address)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-stone-700 leading-relaxed font-normal hover:text-mustard-gold hover:underline transition-colors duration-300 block"
+              >
+                {companyInfo.address}
+              </a>
             </div>
           </div>
-
-
         </div>
 
         {/* Info & Legal Section */}

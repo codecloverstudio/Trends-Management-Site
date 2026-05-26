@@ -11,6 +11,7 @@ import Projects from './pages/Projects';
 import Team from './pages/Team';
 import Feedback from './pages/Feedback';
 import Contact from './pages/Contact';
+import NotFound from './pages/NotFound';
 
 // Components
 import Navbar from './components/Navbar';
@@ -46,6 +47,7 @@ const AnimatedRoutes = () => {
         <Route path="/team" element={<Team />} />
         <Route path="/feedback" element={<Feedback />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </AnimatePresence>
   );
