@@ -1,17 +1,16 @@
-import { useEffect } from 'react';
+import { useEffect, lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
-// Pages
-import Home from './pages/Home';
-
-import About from './pages/About';
-import Segments from './pages/Segments';
-import Projects from './pages/Projects';
-import Team from './pages/Team';
-import Feedback from './pages/Feedback';
-import Contact from './pages/Contact';
-import NotFound from './pages/NotFound';
+// Pages - Lazy Loaded
+const Home = lazy(() => import('./pages/Home'));
+const About = lazy(() => import('./pages/About'));
+const Segments = lazy(() => import('./pages/Segments'));
+const Projects = lazy(() => import('./pages/Projects'));
+const Team = lazy(() => import('./pages/Team'));
+const Feedback = lazy(() => import('./pages/Feedback'));
+const Contact = lazy(() => import('./pages/Contact'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 // Components
 import Navbar from './components/Navbar';
@@ -39,16 +38,25 @@ const AnimatedRoutes = () => {
 
   return (
     <AnimatePresence mode="wait">
-      <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/Segments" element={<Segments />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/team" element={<Team />} />
-        <Route path="/feedback" element={<Feedback />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <Suspense fallback={
+        <div className="min-h-[60vh] bg-[#fbfbfa] flex flex-col items-center justify-center gap-4">
+          <div className="w-12 h-12 rounded-full border-2 border-stone-200 border-t-mustard-gold animate-spin" />
+          <span className="text-mustard-gold font-playfair tracking-[0.25em] text-xs uppercase animate-pulse">
+            Loading Curations...
+          </span>
+        </div>
+      }>
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/Segments" element={<Segments />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/team" element={<Team />} />
+          <Route path="/feedback" element={<Feedback />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
     </AnimatePresence>
   );
 };

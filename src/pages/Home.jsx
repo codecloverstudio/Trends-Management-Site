@@ -1,5 +1,53 @@
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
+
+const AnimatedCounter = ({ value }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const [count, setCount] = useState(0);
+
+  // Extract numerical value and suffix (e.g. "400+" -> 400 and "+")
+  const numericValue = parseInt(value.replace(/[^0-9]/g, ''), 10) || 0;
+  const suffix = value.replace(/[0-9]/g, '');
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    let start = 0;
+    const end = numericValue;
+    if (start === end) return;
+
+    // Animation duration is 2.0 seconds
+    const totalDuration = 2000;
+    const startTime = performance.now();
+
+    const updateCount = (currentTime) => {
+      const elapsedTime = currentTime - startTime;
+      const progress = Math.min(elapsedTime / totalDuration, 1);
+      
+      // Ease-out quad formula
+      const easeProgress = progress * (2 - progress);
+      const currentCount = Math.floor(easeProgress * (end - start) + start);
+
+      setCount(currentCount);
+
+      if (progress < 1) {
+        requestAnimationFrame(updateCount);
+      } else {
+        setCount(end);
+      }
+    };
+
+    requestAnimationFrame(updateCount);
+  }, [isInView, numericValue]);
+
+  return (
+    <span ref={ref} className="tabular-nums">
+      {count}
+      {suffix}
+    </span>
+  );
+};
 import { Link } from 'react-router-dom';
 import { ArrowRight, Sparkles, Star, ChevronLeft, ChevronRight, MapPin, Quote } from 'lucide-react';
 import ownerImg from '../assets/teams-img/owner.jpeg';
@@ -208,7 +256,7 @@ const Home = () => {
               {companyInfo.stats.map((stat, idx) => (
                 <div key={idx} className="flex flex-col items-center justify-center md:px-4">
                   <span className="text-3xl md:text-4xl font-playfair font-normal text-stone-900 tracking-tight mb-1">
-                    {stat.value}
+                    <AnimatedCounter value={stat.value} />
                   </span>
                   <span className="text-[9px] text-festival-orange font-bold uppercase tracking-[0.25em] text-center">
                     {stat.label}
